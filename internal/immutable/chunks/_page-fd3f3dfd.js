@@ -1,0 +1,1 @@
+import{a as r}from"./index-40323045.js";import{H as e}from"./control-e337d4cc.js";function l(o,t){return new e(o,t)}function n({params:o}){if(r[o.slug])return{tools:r[o.slug].list};throw console.log("error"),l(404,"Not found")}const i=Object.freeze(Object.defineProperty({__proto__:null,load:n},Symbol.toStringTag,{value:"Module"}));export{i as _,n as l};

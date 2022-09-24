@@ -1,0 +1,23 @@
+// vite.config.js
+import { sveltekit } from "@sveltejs/kit/vite";
+import path from "node:path";
+var config = {
+  plugins: [sveltekit()],
+  resolve: {
+    alias: {
+      "$i18n": path.resolve("./src/i18n")
+    }
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: '@use "src/variables.scss" as *;'
+      }
+    }
+  }
+};
+var vite_config_default = config;
+export {
+  vite_config_default as default
+};
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsidml0ZS5jb25maWcuanMiXSwKICAic291cmNlc0NvbnRlbnQiOiBbImNvbnN0IF9fdml0ZV9pbmplY3RlZF9vcmlnaW5hbF9kaXJuYW1lID0gXCIvaG9tZS9hbmRyZXcvRG9jdW1lbnRzL1Rlc3RzL3R0dG9vbHNcIjtjb25zdCBfX3ZpdGVfaW5qZWN0ZWRfb3JpZ2luYWxfZmlsZW5hbWUgPSBcIi9ob21lL2FuZHJldy9Eb2N1bWVudHMvVGVzdHMvdHR0b29scy92aXRlLmNvbmZpZy5qc1wiO2NvbnN0IF9fdml0ZV9pbmplY3RlZF9vcmlnaW5hbF9pbXBvcnRfbWV0YV91cmwgPSBcImZpbGU6Ly8vaG9tZS9hbmRyZXcvRG9jdW1lbnRzL1Rlc3RzL3R0dG9vbHMvdml0ZS5jb25maWcuanNcIjsvL0B0cy1jaGVja1xuaW1wb3J0IHsgc3ZlbHRla2l0IH0gZnJvbSAnQHN2ZWx0ZWpzL2tpdC92aXRlJztcbmltcG9ydCBwYXRoIGZyb20gXCJub2RlOnBhdGhcIjtcblxuLyoqIEB0eXBlIHtpbXBvcnQoJ3ZpdGUnKS5Vc2VyQ29uZmlnfSAqL1xuY29uc3QgY29uZmlnID0ge1xuXHRwbHVnaW5zOiBbc3ZlbHRla2l0KCldLFxuXHRyZXNvbHZlOiB7XG5cdFx0YWxpYXM6IHtcblx0XHRcdFwiJGkxOG5cIjogcGF0aC5yZXNvbHZlKFwiLi9zcmMvaTE4blwiKSxcblx0XHRcdC8vIFwiJGxpYlwiOiBwYXRoLnJlc29sdmUoXCIuL3NyYy9saWJcIiksXG5cdFx0fSxcblx0fSxcblx0Y3NzOiB7XG5cdFx0cHJlcHJvY2Vzc29yT3B0aW9uczoge1xuXHRcdFx0c2Nzczoge1xuXHRcdFx0XHRhZGRpdGlvbmFsRGF0YTogJ0B1c2UgXCJzcmMvdmFyaWFibGVzLnNjc3NcIiBhcyAqOydcblx0XHRcdH1cblx0XHR9XG5cdH1cbn07XG5cbmV4cG9ydCBkZWZhdWx0IGNvbmZpZztcbiJdLAogICJtYXBwaW5ncyI6ICI7QUFDQSxTQUFTLGlCQUFpQjtBQUMxQixPQUFPLFVBQVU7QUFHakIsSUFBTSxTQUFTO0FBQUEsRUFDZCxTQUFTLENBQUMsVUFBVSxDQUFDO0FBQUEsRUFDckIsU0FBUztBQUFBLElBQ1IsT0FBTztBQUFBLE1BQ04sU0FBUyxLQUFLLFFBQVEsWUFBWTtBQUFBLElBRW5DO0FBQUEsRUFDRDtBQUFBLEVBQ0EsS0FBSztBQUFBLElBQ0oscUJBQXFCO0FBQUEsTUFDcEIsTUFBTTtBQUFBLFFBQ0wsZ0JBQWdCO0FBQUEsTUFDakI7QUFBQSxJQUNEO0FBQUEsRUFDRDtBQUNEO0FBRUEsSUFBTyxzQkFBUTsiLAogICJuYW1lcyI6IFtdCn0K

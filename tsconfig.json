@@ -1,6 +1,12 @@
 {
 	"extends": "./.svelte-kit/tsconfig.json",
 	"compilerOptions": {
+		"paths": {
+			// name and path to aliases
+			"$i18n/*": ["./src/i18n/*"],
+			"$lib/*": ["./src/lib/*"],
+			"$lib/": ["./src/lib/"]
+		},
 		"allowJs": true,
 		"checkJs": true,
 		"esModuleInterop": true,
@@ -9,7 +15,8 @@
 		"skipLibCheck": true,
 		"sourceMap": true,
 		"strict": true,
-		"suppressImplicitAnyIndexErrors": true
+		"suppressImplicitAnyIndexErrors": true,
+		"useUnknownInCatchVariables": false
 	}
 	// Path aliases are handled by https://kit.svelte.dev/docs/configuration#alias
 	//

@@ -3,13 +3,16 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build",
+		"dev": "npm-run-all --parallel sveltekit typesafe-i18n",
+		"sveltekit": "vite dev",
+		"build": "vite build && npm run postbuild",
+		"postbuild": "npx svelte-sitemap --domain https://andronasef.github.io/tttools",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --check . && eslint .",
-		"format": "prettier --write ."
+		"format": "prettier --write .",
+		"typesafe-i18n": "typesafe-i18n"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-static": "1.0.0-next.43",
@@ -19,22 +22,33 @@
 		"@typescript-eslint/parser": "^5.37.0",
 		"autoprefixer": "^10.4.10",
 		"daisyui": "^2.27.0",
+		"date-picker-svelte": "^2.2.0",
+		"dayjs": "^1.11.5",
 		"eslint": "^8.23.1",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte3": "^4.0.0",
+		"npm-run-all": "^4.1.5",
 		"postcss": "^8.4.16",
 		"postcss-load-config": "^4.0.1",
 		"prettier": "^2.7.1",
 		"prettier-plugin-svelte": "^2.7.0",
 		"sass": "^1.54.9",
 		"svelte": "^3.50.1",
+		"svelte-calendar": "^3.1.6",
 		"svelte-check": "^2.9.0",
 		"svelte-preprocess": "^4.10.7",
 		"svelte-seo": "^1.4.1",
+		"svelte-sitemap": "^2.5.2",
 		"tailwindcss": "^3.1.8",
 		"tslib": "^2.4.0",
 		"typescript": "^4.8.3",
 		"vite": "^3.1.0"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"@sveltejs/adapter-vercel": "1.0.0-next.77",
+		"iconify-icon": "^1.0.0",
+		"ts-node": "^10.9.1",
+		"typesafe-i18n": "^5.13.0"
+	}
 }

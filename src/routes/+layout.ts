@@ -1,14 +1,49 @@
 // @ts-check
-import { tools } from '$lib/toolsdb'
-import type { Tool } from '$lib/toolsdb/models'
+import { localeTranslations } from '$i18n/formatters'
+import type { Locales } from '$i18n/i18n-types'
+import { baseLocale, locales } from '$i18n/i18n-util'
+import { loadLocaleAsync } from '$i18n/i18n-util.async'
+import { redirect } from '@sveltejs/kit'
+import { replaceLocaleInUrl } from '../utils'
+import type { LayoutLoad } from './$types'
+
 export const prerender = true
 
-export function load({ url }: any) {
+
+export const load: LayoutLoad<{ locale: Locales }> = async ({ url, params }) => {
+
+    /* Localization */
+    const lang = params.lang as Locales
+
+    // redirect to base locale if language is not present
+    if (!locales.includes(lang || !url.pathname.includes('/' + lang))) {
+        throw redirect(302, replaceLocaleInUrl(url.pathname, baseLocale))
+    }
+
+    await loadLocaleAsync(lang)
     const slug = url.pathname.split('/').pop()
-    const tool = tools.find((tool: Tool) => tool.slug === slug.split('/').pop())
-    if (tool) {
-        return { slug, tool }
-    } else return { slug }
+    const catslug = url.pathname.split('/')[url.pathname.split('/').length - 2]
+
+    /* Metadata for tool */
+    let thetool
+    let thecategory
+    try {
+        // @ts-ignore
+        thetool = localeTranslations[lang].tools[catslug].list[slug]
+        // @ts-ignore
+        thecategory = (localeTranslations[lang].tools)[catslug]
+
+
+
+    } catch (error) {
+        console.log("No Metadata")
+
+    }
+
+
+    return { lang, slug, tool: thetool ?? null, category: thecategory ?? null }
+
 }
+
 
 

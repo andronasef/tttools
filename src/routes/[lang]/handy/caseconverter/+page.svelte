@@ -27,9 +27,11 @@
 				break;
 			case State.proper:
 				// text proper case
-				localInput = localInput.replace(/\w\S*/g, function (txt) {
-					return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-				});
+				localInput = localInput
+					.toLowerCase()
+					.replace(/(^\s*\w|[\.\!\?]\s*\w)/g, (c) => c.toUpperCase())
+					.replace(/\s+/g, ' ')
+					.replace(/\s+([A-Z])/g, (c) => c.toLowerCase());
 		}
 	}
 </script>
@@ -44,7 +46,7 @@
 		placeholder="Input / Output"
 		cols="30"
 		rows="7"
-		class="w-full lg:w-96"
+		class="w-full lg:w-96 textarea textarea-bordered border-white"
 	/>
 </div>
 <div class="flex flex-col lg:flex-row justify-center gap-3 w-full">
@@ -53,9 +55,3 @@
 	<CaseSwitcher state={State.sentence} />
 	<CaseSwitcher state={State.proper} />
 </div>
-
-<style lang="scss">
-	textarea {
-		@apply textarea textarea-bordered border-white;
-	}
-</style>

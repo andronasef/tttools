@@ -1,1 +1,0 @@
-import{t as l}from"./index-40323045.js";const n=!0;function s({url:e}){const t=e.pathname.split("/").pop(),o=l.find(r=>r.slug===t.split("/").pop());return o?{slug:t,tool:o}:{slug:t}}const a=Object.freeze(Object.defineProperty({__proto__:null,prerender:n,load:s},Symbol.toStringTag,{value:"Module"}));export{a as _,s as l,n as p};

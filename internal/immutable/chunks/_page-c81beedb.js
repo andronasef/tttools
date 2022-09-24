@@ -1,0 +1,1 @@
+import{l as t}from"./formatters-81ad9ffa.js";import{e as r}from"./index-a061f33e.js";function n({params:o}){const e=o.lang,l=t[e].tools[o.slug];if(l)return{tools:l,slug:o.slug};throw console.log("error"),r(404,"Not found")}const g=Object.freeze(Object.defineProperty({__proto__:null,load:n},Symbol.toStringTag,{value:"Module"}));export{g as _,n as l};

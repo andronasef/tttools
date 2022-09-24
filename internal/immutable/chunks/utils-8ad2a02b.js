@@ -1,0 +1,1 @@
+function e(o){o&&(console.log("Copied..."),navigator.clipboard.writeText(o),alert("Copied to clipboard \u{1F4CB}"))}function a(o){return o.replace(/\w\S*/g,r=>r.charAt(0).toUpperCase()+r.substr(1).toLowerCase())}export{e as c,a as t};

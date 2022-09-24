@@ -21,6 +21,6 @@
 
 <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 lg:gap-5">
 	{#each tools as { icon, description, name }, i}
-		<Toolview {icon} {description} {name} slug={toolsSlugs[i]} cat={data.slug} />
+		<Toolview {icon} {description} {name} slug={toolsSlugs[i]} catslug={data.slug} />
 	{/each}
 </div>

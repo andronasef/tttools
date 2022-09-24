@@ -9,5 +9,5 @@ export function copyToClipboard(text: string) {
 // Text
 
 export function toProperCase(text: string) {
-    return text.replace(/\w\S*/g, (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase())
+    return text.charAt(0).toUpperCase() + text.slice(1)
 }

@@ -1,7 +1,6 @@
-<script lang="ts">
+<script>
 	import { localeTranslations } from '$i18n/formatters';
 	import { locale } from '$i18n/i18n-svelte';
-
 	import Toolview from '$lib/components/toolview.svelte';
 	import { fly } from 'svelte/transition';
 
@@ -9,16 +8,18 @@
 	// console.log(toolsCats);
 
 	let query = '';
-	let filterdTools: any[] = [];
-
+	let filterdTools = {};
 	$: if (query) search();
 
 	function search() {
-		filterdTools = [];
-		Object.values(toolsCats).forEach((cat: any) => {
-			Object.values(cat.list).forEach((tool: any) => {
-				if ((tool.name as string).toLowerCase().includes(query.toLowerCase())) {
-					filterdTools.push(tool);
+		filterdTools = {};
+		Object.values(toolsCats).forEach((cat, catindex) => {
+			Object.values(cat.list).forEach((tool, index) => {
+				if (tool.name.toLowerCase().includes(query.toLowerCase())) {
+					const toolslug = Object.keys(cat.list)[index];
+					const catslug = Object.keys(toolsCats)[catindex];
+					Object.assign(tool, { catslug: catslug });
+					filterdTools[`${toolslug}`] = tool;
 				}
 			});
 		});
@@ -35,11 +36,17 @@
 />
 <!-- Search Result -->
 <div class="flex-grow">
-	{#if query.length > 2}
+	{#if query.length > 1}
 		<div class="grid grid-cols-1 md:grid-cols-3 gap-5 p-10 ">
-			{#each filterdTools as { name, description, icon, slug }, i}
+			{#each Object.entries(filterdTools) as [slug, tool], i}
 				<div transition:fly={{ y: 10, duration: 250, delay: 250 + 50 * i }}>
-					<Toolview cat={'handy'} {name} {description} {icon} {slug} />
+					<Toolview
+						{slug}
+						catslug={tool.catslug}
+						name={tool.name}
+						description={tool.description}
+						icon={tool.icon}
+					/>
 				</div>
 			{/each}
 		</div>

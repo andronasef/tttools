@@ -109,33 +109,6 @@ type RootTranslation = {
 				}
 			}
 		}
-		image: {
-			/**
-			 * Image Tools
-			 */
-			name: string
-			/**
-			 * Usefel Tools for Images
-			 */
-			description: string
-			/**
-			 * ion:ios-images
-			 */
-			icon: string
-			list: {
-				agecalculator: {
-					/**
-					 * Age Calculator
-					 */
-					name: string
-					/**
-					 * jam:birthday-cake-f
-					 */
-					icon: string
-					description: string
-				}
-			}
-		}
 	}
 }
 
@@ -222,33 +195,6 @@ export type TranslationFunctions = {
 					icon: () => LocalizedString
 					description: () => LocalizedString
 				}
-				agecalculator: {
-					/**
-					 * Age Calculator
-					 */
-					name: () => LocalizedString
-					/**
-					 * jam:birthday-cake-f
-					 */
-					icon: () => LocalizedString
-					description: () => LocalizedString
-				}
-			}
-		}
-		image: {
-			/**
-			 * Image Tools
-			 */
-			name: () => LocalizedString
-			/**
-			 * Usefel Tools for Images
-			 */
-			description: () => LocalizedString
-			/**
-			 * ion:ios-images
-			 */
-			icon: () => LocalizedString
-			list: {
 				agecalculator: {
 					/**
 					 * Age Calculator

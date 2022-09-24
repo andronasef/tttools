@@ -4,11 +4,11 @@
 	export let name = 'Tool Name';
 	export let description = 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.';
 	export let icon = 'mdi:emoticon-wink';
-	export let cat = '';
+	export let catslug = '';
 	export let slug = '';
 </script>
 
-<a href={`/tttools/${cat}/${slug}`}>
+<a href={`/tttools/${catslug}/${slug}`}>
 	<div class="card lg:min-w-49  bg-neutral shadow-xl h-full">
 		<div class="card-body gap-5 center flex flex-col justify-center items-c">
 			<Icon style={'iconify-inline text-[5rem]'} {icon} />

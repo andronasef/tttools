@@ -1,6 +1,7 @@
 module.exports = {
 	"rules": {
 		"@typescript-eslint/ban-ts-comment": "off"
+
 	},
 	root: true,
 	parser: '@typescript-eslint/parser',

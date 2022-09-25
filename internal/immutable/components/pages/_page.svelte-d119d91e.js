@@ -1,1 +1,0 @@
-import{S as n,i,s as o,q as c,r as l,b as d,A as a,h as u}from"../../chunks/index-7183cb92.js";function f(s){let t;return{c(){t=c("Redirect")},l(e){t=l(e,"Redirect")},m(e,r){d(e,t,r)},p:a,i:a,o:a,d(e){e&&u(t)}}}class p extends n{constructor(t){super(),i(this,t,null,f,o,{})}}export{p as default};

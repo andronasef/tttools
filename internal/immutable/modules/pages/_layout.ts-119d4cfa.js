@@ -1,0 +1,1 @@
+import"../../chunks/formatters-81ad9ffa.js";import"../../chunks/i18n-util-f913d392.js";import{l as t,p as a}from"../../chunks/_layout-21633fca.js";import"../../chunks/index-a061f33e.js";export{t as load,a as prerender};

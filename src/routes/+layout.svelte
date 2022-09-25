@@ -2,7 +2,6 @@
 	import { page } from '$app/stores';
 	import { setLocale } from '$i18n/i18n-svelte';
 	import Breadcrumbs from '$lib/components/breadcrumbs.svelte';
-	import Footer from '$lib/components/footer.svelte';
 	import Header from '$lib/components/header.svelte';
 	import SvelteSeo from 'svelte-seo';
 	import { fly } from 'svelte/transition';
@@ -47,4 +46,4 @@
 	</div>
 {/key}
 
-<Footer />
+<!-- <Footer /> -->

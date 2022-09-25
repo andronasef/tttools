@@ -15,7 +15,7 @@
 		<p>Copyright © 2022 - All right reserved</p>
 	</div>
 	<div class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
-		<a
+		<a href="/"
 			><svg
 				xmlns="http://www.w3.org/2000/svg"
 				width="24"
@@ -27,7 +27,7 @@
 				/></svg
 			>
 		</a>
-		<a
+		<a href="/"
 			><svg
 				xmlns="http://www.w3.org/2000/svg"
 				width="24"
@@ -39,7 +39,7 @@
 				/></svg
 			></a
 		>
-		<a
+		<a href="/"
 			><svg
 				xmlns="http://www.w3.org/2000/svg"
 				width="24"

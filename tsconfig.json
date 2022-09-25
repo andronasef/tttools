@@ -5,8 +5,8 @@
 		"paths": {
 			// name and path to aliases
 			"$i18n/*": ["./src/i18n/*"],
-			"$lib/*": ["./src/lib/*"],
-			"$lib/": ["./src/lib/"]
+			"$lib": ["src/lib"],
+			"$lib/*": ["src/lib/*"]
 		},
 		"allowJs": true,
 		"checkJs": true,

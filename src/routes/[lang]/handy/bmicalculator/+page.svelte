@@ -1,11 +1,6 @@
 <script lang="ts">
 	import Slider from './components/slider.svelte';
 
-	enum Gender {
-		Male,
-		Female
-	}
-
 	// let age: number = 10;
 	let height = 160;
 	let weight = 70;

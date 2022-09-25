@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { toProperCase } from '$lib/utils';
-
 	export let tool: any;
 	export let catIcon: any;
 	export let cat: string;
@@ -21,10 +19,8 @@
 			</li>
 			<li>
 				<a href={`/tttools/${cat}`}>
-					<span class="iconify-inline w-4 h-4 mr-2 stroke-current" data-icon={catIcon} />
-
-					{toProperCase(cat)}</a
-				>
+					<span class="iconify-inline w-4 h-4 mr-2 stroke-current capitalize" data-icon={catIcon} />
+				</a>
 			</li>
 			<li>
 				<span class="iconify-inline w-4 h-4 mr-2 stroke-current" data-icon={tool.icon} />

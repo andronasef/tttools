@@ -8,3 +8,48 @@
 		@apply flex flex-col justify-center items-center;
 	}
 }
+
+body {
+	min-height: 600px;
+	overflow-y: scroll;
+}
+
+:root {
+	--ppp: #763af9;
+	/* Scroll Bar */
+}
+html {
+	scroll-behavior: smooth;
+}
+/* width */
+::-webkit-scrollbar {
+	width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: hsla(0, 0%, 100%, 0.5);
+}
+
+/* Selection */
+* {
+	-webkit-tap-highlight-color: rgba(var(--ppp), 0.2);
+	outline: none;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+}
+
+::-moz-selection {
+	color: #ffffff;
+	background: var(--ppp);
+}
+
+::selection {
+	color: #ffffff;
+	background: var(--ppp);
+}

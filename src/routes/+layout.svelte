@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { page } from '$app/stores';
 	import { setLocale } from '$i18n/i18n-svelte';
 	import Breadcrumbs from '$lib/components/breadcrumbs.svelte';
 	import Header from '$lib/components/header.svelte';
@@ -13,8 +12,6 @@
 	export let data: LayoutData;
 
 	setLocale(data.lang);
-
-	const cat = $page.url.pathname.split(`/${data.lang}`)[1].split('/')[1];
 
 	const pageTransitionDuration = 250;
 </script>
@@ -40,7 +37,7 @@
 		out:fly={{ y: -10, duration: pageTransitionDuration }}
 	>
 		{#if data.tool}
-			<Breadcrumbs {cat} tool={data.tool} catIcon={data.category.icon} />
+			<Breadcrumbs cat={data.category[1]} catslug={data.category[0]} tool={data.tool} />
 		{/if}
 		<slot class="space-y-5" />
 	</div>

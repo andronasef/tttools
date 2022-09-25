@@ -1,7 +1,7 @@
 <script lang="ts">
 	export let tool: any;
-	export let catIcon: any;
-	export let cat: string;
+	export let catslug: any;
+	export let cat: any;
 </script>
 
 {#if tool}
@@ -18,8 +18,12 @@
 				>
 			</li>
 			<li>
-				<a href={`/tttools/${cat}`}>
-					<span class="iconify-inline w-4 h-4 mr-2 stroke-current capitalize" data-icon={catIcon} />
+				<a href={`/tttools/${catslug}`}>
+					<span
+						class="iconify-inline w-4 h-4 mr-2 stroke-current capitalize"
+						data-icon={cat.icon}
+					/>
+					{cat.name}
 				</a>
 			</li>
 			<li>

@@ -9,7 +9,7 @@ import type { LayoutLoad } from './$types'
 
 export const prerender = true
 
-
+// @ts-ignore
 export const load: LayoutLoad<{ locale: Locales }> = async ({ url, params }) => {
 
     /* Localization */
@@ -36,12 +36,11 @@ export const load: LayoutLoad<{ locale: Locales }> = async ({ url, params }) => 
 
 
     } catch (error) {
-        console.log("No Metadata")
 
     }
 
 
-    return { lang, slug, tool: thetool ?? null, category: thecategory ?? null }
+    return { lang, slug, tool: thetool ?? null, category: [catslug, thecategory] ?? null }
 
 }
 

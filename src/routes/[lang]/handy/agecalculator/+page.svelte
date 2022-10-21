@@ -5,7 +5,7 @@
 	const theme = {
 		calendar: {
 			width: '500px',
-			maxWidth: '50vw',
+			maxWidth: '85vw',
 			legend: {
 				height: '40px'
 			},
